@@ -1,16 +1,17 @@
 import React from 'react'
+import { useState } from 'react';
 
 const App = () => {
+ const [count,setCount] =useState(0)
   // function clickHandler(){
   //   console.log("button clicked")
-  let a = 1;
   function increment(){
-      a = a+1;
-      console.log(a)
+    setCount(count+1)
+    console.log(count)
   }
   return (
     <div>
-      <p>value of a : {a}</p>
+      <p>value of a : {count}</p>
       {/* <button  onClick={clickHandler}>button</button> {clickhandler} is just reference of the function and we define function above return obviously} */}
       <button onClick={increment}>click</button>
     </div>
