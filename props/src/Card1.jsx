@@ -3,7 +3,7 @@
 // const Card1 = (props) => {
 //   return (
 //     <div>
-//       <h1>Name : {props.name}</h1>
+//       <h1>Name : {props.name}</h1> // passing props
 //       <p>Age : {props.age}</p>
 //       <p>Salay : {props.salary}</p>
 //     </div>
