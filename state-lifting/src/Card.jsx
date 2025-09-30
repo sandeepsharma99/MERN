@@ -15,3 +15,5 @@ const Card = (props) => {
 }
 
 export default Card
+
+/* basically we do setName in child component with the help of input onChange={clickHandler} function*/
