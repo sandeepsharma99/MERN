@@ -49,20 +49,44 @@
 
 // export default App
 
+// <--! -->
+
+// import React from 'react'
+// import { useState } from 'react'
+
+// const App = () => {
+//   const [count, setCount] = useState(0)
+//   const function clickHandle(){
+//     setCount(
+//       count+1
+//     )
+//   }
+//   return (
+//     <div>
+//       <p>Count : {count}</p>
+//       <button onClick={clickHandle}>Increase</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
 import React from 'react'
-import { useState } from 'react'
+import { useState,useRef } from 'react'
 
 const App = () => {
+  const ref = useRef(0)
   const [count, setCount] = useState(0)
-  const function clickHandle(){
-    setCount(
-      count+1
-    )
+  const increase = ()=>{
+    setCount(count+1)
+     ref.current = ref.current+1
+    console.log(ref.current)
   }
   return (
     <div>
       <p>Count : {count}</p>
-      <button onClick={clickHandle}>Increase</button>
+      <button onClick={increase}>increase</button>
     </div>
   )
 }
