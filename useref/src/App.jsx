@@ -109,17 +109,20 @@
 // export default App
 
 import React from 'react'
-import { useState, useRef } from 'react'
+import { useState, useRef,useEffect } from 'react'// we use useEffect to solve useref problem 
 
 const App = () => {
-  const [count,setCount] = useState()
+  const [count,setCount] = useState(0)
   const ref = useRef()
 
-  if(!ref.current){
-    return null
-  }else{
-    ref.current.style.innerText = "sharma"
-  }
+    useEffect(()=>{
+      if(!ref.current){
+      return null
+    }else{
+      ref.current.style.backgroundColor = "blue"
+      ref.current.style.innerText = "sharma"
+    }
+    },[count])
 
   function clickHandle(){
     setCount(
@@ -133,8 +136,8 @@ const App = () => {
   return (
     <div>
       <h1 ref = {ref}>Sandeep</h1>
-      {console.log(ref.current)}
-      {ref.current.style.innerText = "sharma"}
+      {/* {console.log(ref.current)} */}
+      
       <p>value of Count : {count}</p>
       <button onClick={clickHandle}>increase</button>
     </div>
