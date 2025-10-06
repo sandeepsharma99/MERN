@@ -72,36 +72,71 @@
 // export default App
 
 
+// import React from 'react'
+// import { useState,useRef } from 'react'
+
+// const App = () => {
+//   const [count, setCount] = useState(0)
+//   const ref = useRef()
+//   if(!ref.current){
+//     return null
+//   }else{
+//     ref.current.style.innerText = "sharma"
+//   }
+  
+//   // const [ref, setRef] = useState(0)
+//   const increase = ()=>{
+//     setCount(count+1)
+//     // setRef(ref+1)
+//     // console.log(ref)
+//     //  ref.current = ref.current+1
+//     // console.log(ref.current)
+//   }
+//   return (
+//     <div>
+//       <p>Count : {count}</p>
+//       <h1 ref = {ref}>sandeep</h1>
+//       {console.log(ref.current)}    
+//       {ref.current.style.backgroundColor = "green"} 
+//       {/* {(ref.current.style.backgroundColor = "red")} 
+//       {(ref.current.style.innerText = "sharma")} */}
+
+//       <button onClick={increase}>increase</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
 import React from 'react'
-import { useState,useRef } from 'react'
+import { useState, useRef } from 'react'
 
 const App = () => {
-  const [count, setCount] = useState(0)
+  const [count,setCount] = useState()
   const ref = useRef()
+
   if(!ref.current){
     return null
   }else{
     ref.current.style.innerText = "sharma"
   }
-  
-  // const [ref, setRef] = useState(0)
-  const increase = ()=>{
-    setCount(count+1)
-    // setRef(ref+1)
-    // console.log(ref)
-    //  ref.current = ref.current+1
+
+  function clickHandle(){
+    setCount(
+      count+1
+    )
+    
+    // ref.current = ref.current+1
     // console.log(ref.current)
+   
   }
   return (
     <div>
-      <p>Count : {count}</p>
-      <h1 ref = {ref}>sandeep</h1>
-      {console.log(ref.current)}    
-      {ref.current.style.backgroundColor = "green"} 
-      {/* {(ref.current.style.backgroundColor = "red")} 
-      {(ref.current.style.innerText = "sharma")} */}
-
-      <button onClick={increase}>increase</button>
+      <h1 ref = {ref}>Sandeep</h1>
+      {console.log(ref.current)}
+      {ref.current.style.innerText = "sharma"}
+      <p>value of Count : {count}</p>
+      <button onClick={clickHandle}>increase</button>
     </div>
   )
 }
