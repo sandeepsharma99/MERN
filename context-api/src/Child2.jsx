@@ -22,18 +22,38 @@
 
 import React from 'react'
 import { useContext } from 'react'
-import {Distributor} from "./App"
+import { dataDistributor } from './App'
+
+
+
 const Child2 = () => {
-  const data = useContext(Distributor)
+  let data = useContext(dataDistributor)
   return (
     <div>
-      {data.fname}
+      {data.fname}<br></br>
       {data.lname}
     </div>
   )
 }
 
 export default Child2
+
+
+
+// import React from 'react'
+// import { useContext } from 'react'
+// import {Distributor} from "./App"
+// const Child2 = () => {
+//   const data = useContext(Distributor)
+//   return (
+//     <div>
+//       {data.fname}
+//       {data.lname}
+//     </div>
+//   )
+// }
+
+// export default Child2
 
 
 
