@@ -4,6 +4,7 @@ const App = () => {
   return (
     <div className='text-3xl'>
       hiii
+      hello
     </div>
   )
 }
