@@ -22,22 +22,26 @@
 
 // export default App
 
-import React, { useRef } from 'react'
 
+/* Uncontrolled component */
+/* In uncontrolled component we uses useref to access the element or to manipulate   */
+
+import React from 'react'
+import { useRef } from 'react'
 
 const App = () => {
   const ref = useRef()
-  const  handleSubmit = (e)=>{
-    e.preventDefault()
-    alert(`you've typed ${ref.current.value}`) 
+  const handleSubmit = (e)=>{
+    e.preventDefault()  // ?
+    alert(`you name is ${ref.current.value}`)
   }
   return (
-    <div>
-      <form action="" onSubmit={handleSubmit}>
+    <div> 
+      <form action="" onSubmit={handleSubmit}> 
         <fieldset>
-          <label htmlFor="">Text : </label>
-          <input type="text" ref ={ref} />
-          <button>submit</button>
+          <label htmlFor="">Name</label>
+          <input type="text" name="" id="" ref={ref} />
+          <button>button</button>
         </fieldset>
       </form>
     </div>
@@ -45,6 +49,7 @@ const App = () => {
 }
 
 export default App
+
 
 /* controlled component */
 /* commit */
