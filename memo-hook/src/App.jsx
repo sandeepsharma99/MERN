@@ -1,4 +1,5 @@
 import React ,{useState} from 'react'
+import Child from "./Child"
 
 const App = () => {
   const [count1,setCount1] = useState(0)
@@ -15,11 +16,11 @@ const App = () => {
     <div>
       <p>Value of Counter2: {count2}</p>
       <button onClick={()=>setCount2(count2+1)}>Increase</button>
-
-      <br></br>
-      <br></br>
-      
     </div>
+
+    <br></br>
+    <br></br>
+    <Child count = {count2}/>
     </>
   )
 }
