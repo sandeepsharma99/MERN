@@ -12,3 +12,9 @@ createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </StrictMode>,  
 )
+
+
+/* 
+import BrowserRouter from reactrouterdom in main.jsx 
+and in navbar import router routes route from reactrouter dom
+instaed of <a> we use <linl to="/"></link> to redirect  */
