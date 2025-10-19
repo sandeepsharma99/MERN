@@ -1,10 +1,13 @@
 import React from 'react'
+import AddTodo from './AddTodo'
 
 const App = () => {
   return (
-    <div>
-      app
-    </div>
+    <>
+      <AddTodo/>
+      <br />
+      <ViewTodo/>
+    </>
   )
 }
 
