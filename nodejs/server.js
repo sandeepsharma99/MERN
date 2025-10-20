@@ -24,29 +24,57 @@
 1. Install express 
 */
 
-import express from "express";
+// import express from "express";
 
-import fs from "fs"
+// import fs from "fs"
 
+// const PORT = 3000;
+// const server = express();
+
+// server.get("/",(req,res)=>{
+//     res.end("Hi from serverr...")
+// })
+
+// server.get("/about",(req,res)=>{
+// // i'll read file using fs module asyn operation...
+//     fs.readFile("./about.html","utf-8",(err,data)=>{
+//         if(err){
+//             res.status(500).send("err in reading file")
+//             return;
+//         }
+//         res.send(data)
+//     });
+// })
+
+// server.get("/home",(req,res)=>{
+// // i'll read file using fs module asyn operation...
+//     fs.readFile("./.html","utf-8",(err,data)=>{
+//         if(err){
+//             res.status(500).send("err in reading file")
+//             return;
+//         }
+//         res.send(data)
+//     });
+// })
+
+
+// server.listen(PORT, ()=>{
+//     console.log("server is listeniing on port 3000")
+// })
+
+
+import express from "express"
 const PORT = 3000;
-const server = express();
 
-server.get("/",(req,res)=>{
-    res.end("Hi from serverr...")
+
+const app = express();
+
+app.set("view engine","ejs")
+
+app.get("/conatct",(req,res)=>{
+    res.render("contact",{title:"serverside rendering"})
 })
 
-server.get("/about",(req,res)=>{
-// i'll read file using fs module asyn operation...
-    fs.readFile("./about.html","utf-8",(err,data)=>{
-        if(err){
-            res.status(500).send("err in reading file")
-            return;
-        }
-        res.send(data)
-    });
-})
-
-
-server.listen(PORT, ()=>{
-    console.log("server is listeniing on port 3000")
+app.listen(PORT,()=>{
+    console.log('server is listening on port 3000')
 })

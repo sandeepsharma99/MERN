@@ -1,12 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Page</title>
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-container {
+      background: white;
+      max-width: 600px;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* Simple fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>About PAGE</h1>
-    <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione distinctio reiciendis magni cumque amet molestiae ipsam illum dolorem, facere quas ullam. Facere nesciunt ullam vero explicabo sint quo, deserunt mollitia!</P>
+  <div class="about-container">
+    <h1>About Page</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+      Ratione distinctio reiciendis magni cumque amet molestiae ipsam 
+      illum dolorem, facere quas ullam. Facere nesciunt ullam vero explicabo 
+      sint quo, deserunt mollitia!
+    </p>
+  </div>
 </body>
 </html>
