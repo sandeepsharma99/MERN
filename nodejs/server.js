@@ -71,8 +71,8 @@ const app = express();
 
 app.set("view engine","ejs")
 
-app.get("/conatct",(req,res)=>{
-    res.render("contact",{title:"serverside rendering"})
+app.get("/contact",(req,res)=>{
+    res.render("contact",{title:"server-side rendering"})
 })
 
 app.listen(PORT,()=>{
