@@ -3,13 +3,13 @@ import Card from './Card';
 
 const About = () => {
   return (
-    <div className="space-y-12">
+    <div className="space-y-12 ">
       <div className="text-center bg-white p-10 rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold">About Our Application</h1>
         <p className="mt-4 text-lg text-gray-600">We are a team dedicated to building high-quality, user-friendly web applications.</p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-8 container m-auto ">
         <Card title="Our Mission">
           <p>
             To provide the best user experience by creating intuitive and beautiful web interfaces. We believe in the power of good design and clean code.
