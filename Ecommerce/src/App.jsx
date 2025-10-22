@@ -5,6 +5,7 @@ import { Route, Routes  } from  "react-router-dom";
 import About from './Landing_page/About'
 import Cart from './Landing_page/Cart'
 import Product from './Landing_page/product';
+import { CartProvider } from './context/CartContext';
 
 
 
