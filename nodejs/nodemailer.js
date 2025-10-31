@@ -1,4 +1,6 @@
 import express from "express"
+import nodemailer from "nodemailer"
+
 const PORT = 3000;
 
 const app = express();
@@ -8,20 +10,20 @@ app.get("/",(req,res)=>{
 });
 console.log(nodemailer)
 //Transport setup
-const Transport = nodemailer.createTransport({
-    service:"gamil",
+const transport = nodemailer.createTransport({
+    service:"gmail",
     auth:{
-        user:"sandeepsharma9182@gmail.com",
-        pass:"password"
+        user:"ssyugedu@gmail.com",
+        pass:"ufks zbte xqmu ixfz"
     }
 })
 const mailOption = {
-    from : "sandeeepsharma9182@gmail.com",
-    to:"lakshaya20042004gmial.com",
+    from : "ssyugedu@gmail.com",
+    to:"sandeepsharma9182@gmail.com",
     subject: "test mail",
     text:"This is text mail sent from Node.js"
 }
-transporter.sendMail(mailOptions,(error,info)=>{
+transport.sendMail(mailOption,(error,info)=>{
     if(error){
         console.log(error)
     }else{
