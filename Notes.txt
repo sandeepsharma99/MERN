@@ -1,1 +1,2 @@
-Transporter :
+Transporter : createTransporter compose mail obj, call transporter.sendmailer(compose,()=>{})
+install mongodb compass
