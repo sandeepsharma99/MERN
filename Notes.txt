@@ -1,2 +1,9 @@
-Transporter : createTransporter compose mail obj, call transporter.sendmailer(compose,()=>{})
+
+# L:33
+install nodemailer
+import Nodemailer
+Transporter setup
+const Transporter = nodemailer.createTransporter
+compose mail obj, call transporter.sendmailer(compose,()=>{})
 install mongodb compass
+connecting server with database using mongoose.connect("database url").then().catch((err)=>{clg(err)})
