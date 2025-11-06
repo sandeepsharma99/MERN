@@ -7,3 +7,10 @@ const Transporter = nodemailer.createTransporter
 compose mail obj, call transporter.sendmailer(compose,()=>{})
 install mongodb compass
 connecting server with database using mongoose.connect("database url").then().catch((err)=>{clg(err)})
+
+# L:32(creating own api using mockaroo)
+
+login to mockaroo select  field name,format:JSON hit generate
+create product .json file paste mockdata create product.js 
+
+create server import express fs module set route pass fs.readFile pass file name , "utf-8" ,cb with if else condition
