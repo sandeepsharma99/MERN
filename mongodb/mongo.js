@@ -9,28 +9,32 @@ const app=express();
 
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URL).then(()=>{     // returns promises and we handle promise by using .then.catch //connec    ting database
-    console.log("connected to mongodb"); 
-    
+mongoose.connect(process.env.MONGODB_URL).then(()=>{    //connecting database | returns promises and we handle promise by using .then.catch 
+    console.log("connected to mongodb");    
 }).catch((err)=>{
-    console.log(err);   
-    
+    console.log(err);     
 })
 
-// create operation
+// create operation of {CRUD}
+
 //schema
-const userSchema = new mongoose.Schema({ // creating schema
-    email: String,
-    password: String,
+// const userSchema = new mongoose.Schema({ // creating schema
+//     email: String,
+//     password: String,
+// })
+const Schema =  new mongoose.Schema({      // defining schema
+    email : String,
+    password : String,
 })
 //creating model 
-const User =  mongoose.model("User",userSchema) 
+// const User =  mongoose.model("User",userSchema) 
+const User = mongoose.model("User",Schema)     // creating model naming User and passing Schema in it
 
-app.post("/signup",async (req,res)=>{
+app.post("/signup",async (req,res)=>{      // sending data from signup route
     try{
         // const email = req.body.email;
         // const password = req.body.password;
-       const {email, password} = req.body
+       const {email, password} = req.body   
         const user = new User({email:email,password:password});
         const savedUser = await user.save();
         res.status(201).json({message:"user created successfully"});
@@ -39,9 +43,31 @@ app.post("/signup",async (req,res)=>{
     }
 })
 
-app.listen((PORT),()=>{
-    console.log(`server stared on the PORT ${PORT}`);
-    
+//  read operation of {CRUD}
+
+app.get("/allusers",async (req,res)=>{
+    try{
+        const users = await User.find()
+        res.status(201).json(users)
+    }catch(err){
+        res.status(400).json({message:"something went wrong",err})
+    }
+})
+
+//read user opeation by id
+
+app.get("/allusers/:id",async (req,res)=>{   // finding data by params 
+    try{
+        const hathi = await User.findById(req.params.id)
+        if(!hathi) return res.status(404).json({message :"usernot found"})
+        res.status(201).json(hathi)
+    }catch(err){
+        res.status(400).json({message:"somethikng went5 wrong", err})
+    }
+})
+
+app.listen(PORT,()=>{
+    console.log(`server initiated successfully at Port :${PORT}`)
 })
 
 // const userSchema= new mongoose.Schema({
