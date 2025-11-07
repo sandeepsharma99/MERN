@@ -9,7 +9,7 @@ const app=express();
 
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URL).then(()=>{     // returns promises and we handle promise s=using .then.catch
+mongoose.connect(process.env.MONGODB_URL).then(()=>{     // returns promises and we handle promise by using .then.catch //connec    ting database
     console.log("connected to mongodb"); 
     
 }).catch((err)=>{
@@ -24,13 +24,13 @@ const userSchema = new mongoose.Schema({ // creating schema
     password: String,
 })
 //creating model 
-const User =  mongoose.model("User",userSchema)
+const User =  mongoose.model("User",userSchema) 
 
 app.post("/signup",async (req,res)=>{
     try{
-        const email = req.body.email;
-        const password = req.body.password;
-        // const{email,password}=req.body;
+        // const email = req.body.email;
+        // const password = req.body.password;
+       const {email, password} = req.body
         const user = new User({email:email,password:password});
         const savedUser = await user.save();
         res.status(201).json({message:"user created successfully"});
@@ -38,6 +38,7 @@ app.post("/signup",async (req,res)=>{
         console.log(err)
     }
 })
+
 app.listen((PORT),()=>{
     console.log(`server stared on the PORT ${PORT}`);
     
