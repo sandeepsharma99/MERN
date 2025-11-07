@@ -15,8 +15,6 @@ mongoose.connect(process.env.MONGODB_URL).then(()=>{    //connecting database | 
     console.log(err);     
 })
 
-// create operation of {CRUD}
-
 //schema
 // const userSchema = new mongoose.Schema({ // creating schema
 //     email: String,
@@ -29,6 +27,8 @@ const Schema =  new mongoose.Schema({      // defining schema
 //creating model 
 // const User =  mongoose.model("User",userSchema) 
 const User = mongoose.model("User",Schema)     // creating model naming User and passing Schema in it
+
+// create operation of {CRUD}
 
 app.post("/signup",async (req,res)=>{      // sending data from signup route
     try{
@@ -64,6 +64,34 @@ app.get("/allusers/:id",async (req,res)=>{   // finding data by params
     }catch(err){
         res.status(400).json({message:"somethikng went5 wrong", err})
     }
+})
+
+//update opeartion
+
+app.put("/allusers/:id", async (req,res)=>{
+    try{
+        const updatedUser = await User.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            {new:true}
+        )
+        if(!updatedUser)   return res.status(404).json(updatedUser)
+            res.json(updatedUser);
+    }catch(err){
+        res.status(404).json({message:"something went wrong "},err)
+    }
+})
+
+// delete operation 
+
+app.delete("/allusers/:id", async(req,res)=>{
+    try{
+        const deletedUser = await User.findByIdAndDelete(req.params.id);
+        if(!deletedUser) return res.status(404).json({message: "something went wrong", err})
+            res.json(deletedUser)
+    }catch(err){
+        res.status(404).json({message:"errorr", err})
+}
 })
 
 app.listen(PORT,()=>{
