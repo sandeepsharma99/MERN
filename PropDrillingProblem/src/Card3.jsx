@@ -1,11 +1,11 @@
 import React from 'react'
+import Card4 from './Card4'
 
 const Card3 = ({data}) => {
     console.log(data)
   return (
     <div>
-      <h1>Name -  {data.myname}</h1>
-      <p>age - {data.age}</p>
+      <Card4 data = {data} />
     </div>
   )
 }

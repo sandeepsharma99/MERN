@@ -1,12 +1,18 @@
 import React from 'react'
-import Card1 from "./Card1"
+import { useState } from 'react'
 
-const Card2 = ({data}) => {
+const Card2 = () => {
+
+  const [count ,setCount] = useState(0)
+    function handleClick(){
+      setCount(count+1)
+    }
   return (
     <div>
-       <p>Name : {data.name}</p>
+      <p>count : {count}</p>
+      <button onClick={handleClick}>Click me</button>
     </div>
   )
 }
 
-export default Card2
+export default Card2;

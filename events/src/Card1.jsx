@@ -1,10 +1,15 @@
 import React from 'react'
-import Card2 from "./Card2"
+import { useState } from 'react'
 
-const Card1 = ({data}) => {
+const Card1 = () => {
+  const [count ,setCount] = useState(0)
+  function handleClick(){
+    setCount(count+1)
+  }
   return (
     <div>
-     <Card2/>
+      <p>count : {count}</p>
+      <button onClick={handleClick}>Click me</button>
     </div>
   )
 }
