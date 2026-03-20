@@ -1,25 +1,47 @@
+// import React from 'react'
+// import Child1 from './Child1'
+// import { createContext } from 'react'
+
+// export const dataDistributor = createContext()
+
+// const App = () => {
+//     let data = {
+//         fname:"sandeep",
+//         lname:"sharma",
+
+//     }
+//   return (
+//     <dataDistributor.Provider value={data} >
+//     <div>
+//       <Child1 />
+//     </div>
+//     </dataDistributor.Provider>
+//   )
+// }
+
+// export default App
 import React from 'react'
 import Child1 from './Child1'
 import { createContext } from 'react'
 
-export const dataDistributor = createContext()
+export const dataDistributer = createContext();
 
 const App = () => {
-    let data = {
-        fname:"sandeep",
-        lname:"sharma",
-
-    }
+  let data = {
+    fname:"sandeep",
+    lname : "sharma"
+  }
   return (
-    <dataDistributor.Provider value={data} >
     <div>
-      <Child1 />
+      <dataDistributer.Provider value = {data}>
+        <Child1/>
+      </dataDistributer.Provider>
     </div>
-    </dataDistributor.Provider>
   )
 }
 
 export default App
+
 
 
 // import React from 'react'

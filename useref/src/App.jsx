@@ -113,14 +113,16 @@ import { useState, useRef,useEffect } from 'react'// we use useEffect to solve u
 
 const App = () => {
   const [count,setCount] = useState(0)
-  const ref = useRef()
+  const ref = useRef(0)
+  console.log(ref)
+  
 
     useEffect(()=>{
       if(!ref.current){
       return null
     }else{
-      ref.current.style.backgroundColor = "blue"
-      ref.current.style.innerText = "sharma"
+      ref.current.style.backgroundColor = "red"
+      ref.current.style.innerText = "singh"
     }
     },[count])
 
