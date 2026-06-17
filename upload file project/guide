@@ -1,0 +1,6 @@
+how to create server ?
+Ans : 
+1. create a backend folder 
+2. cd backend
+npm init 
+
